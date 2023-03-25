@@ -1,0 +1,51 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        int mat,fizik,turkce,kimya,muzik, average;
+        Scanner inp = new Scanner(System.in);
+        System.out.print("Matematik Notunuz: ");
+        mat = inp.nextInt();
+        System.out.print("Fizik Notunuz: ");
+        fizik = inp.nextInt();
+        System.out.print("Türkçe Notunuz: ");
+        turkce = inp.nextInt();
+        System.out.print("Kimya Notunuz: ");
+        kimya = inp.nextInt();
+        System.out.print("Müzik Notunuz: ");
+        muzik = inp.nextInt();
+
+        if (mat<0 || mat>100){
+            mat = 0;
+        }else {
+            mat = mat;
+        }
+        if (fizik<0 || fizik>100){
+            fizik = 0;
+        }else {
+            fizik = fizik;
+        }
+        if (turkce<0 || turkce>100){
+            turkce = 0;
+        }else {
+            turkce = turkce;
+        }
+        if (kimya<0 || kimya>100){
+            kimya = 0;
+        }else {
+            kimya = kimya;
+        }
+        if (muzik<0 || muzik>100){
+            muzik = 0;
+        }else {
+            muzik = muzik;
+        }
+        average = (mat + fizik + turkce + kimya + muzik) / 5;
+
+        if (average>55){
+            System.out.println("Tebrikler!");
+        }else {
+            System.out.println("Tekrar Deneyiniz!");
+        }
+        System.out.println("Ortalamanız: " + average);
+    }
+}
