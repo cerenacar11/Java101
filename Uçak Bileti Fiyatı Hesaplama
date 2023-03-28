@@ -1,0 +1,57 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        double km,bilet,indirimliBilet;
+        int yas,yolculukTipi;
+        Scanner inp = new Scanner(System.in);
+        System.out.print("Mesafeyi km cinsinden giriniz: ");
+        km = inp.nextDouble();
+        System.out.print("Yaşınızı Giriniz: ");
+        yas = inp.nextInt();
+        System.out.print("Yolculuk tipini giriniz (Tek yön için 1, Gidiş dönüş için 2): ");
+        yolculukTipi = inp.nextInt();
+        bilet = km*0.10;
+        if ((yas>0)&&(km>0)){
+            if (yas<12){
+                indirimliBilet = bilet - (bilet*0.5);
+                switch (yolculukTipi){
+                    case 1:
+                        System.out.println("Bilet ücretiniz: " + indirimliBilet);
+                        break;
+                    case 2:
+                        System.out.println("Bilet ücretiniz: " + (indirimliBilet-(indirimliBilet * 0.2)));
+                        break;
+                    default:
+                        System.out.println("Hatalı giriş yaptınız!");
+                }
+            }else if ((yas>=12)&&(yas<=24)){
+                indirimliBilet = bilet - (bilet * 0.1);
+                switch (yolculukTipi){
+                    case 1:
+                        System.out.println("Bilet ücretiniz: " + indirimliBilet);
+                        break;
+                    case 2:
+                        System.out.println("Bilet ücretiniz: " + 2 * (indirimliBilet-(indirimliBilet*0.2)));
+                        break;
+                    default:
+                        System.out.println("Hatalı giriş yaptınız!");
+                }
+            }else if (yas>65){
+                indirimliBilet= bilet - (bilet*0.3);
+                switch (yolculukTipi){
+                    case 1:
+                        System.out.println("Bilet ücretiniz: " + indirimliBilet);
+                        break;
+                    case 2:
+                        System.out.println("Bilet ücretiniz: " + (indirimliBilet-(indirimliBilet*0.2)));
+                    default:
+                        System.out.println("Hatalı giriş yaptınız!");
+                }
+            }else{
+                System.out.println("Bilet ücretiniz: " + bilet);
+            }
+        } else {
+            System.out.println("Hatalı veri girdiniz!");
+        }
+    }
+}
